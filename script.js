@@ -9,25 +9,33 @@ const calculaIMC = () => {
     const altura = document.getElementById("altura").value;
 
     if (altura != '' && peso != '') {
-        const imc = (peso / (altura * altura)).toFixed(2);
 
-        let classification = ''
+        //Verifica se o que foi digitado são números
+        if (isNaN(altura) || isNaN(peso)) {
+            resultado.innerHTML = 'Digite números ò.Ó'
 
-        if (imc < 18.5) {
-            classification = 'Abaixo do peso'
-        } else if (imc < 25) {
-            classification = 'Peso normal'
-        } else if (imc < 30) {
-            classification = 'Acima do peso'
-        } else if (imc < 35) {
-            classification = 'Obesidade grau I'
-        } else if (imc < 41) {
-            classification = 'Obesidade grau II'
         } else {
-            classification = 'Obesidade grau III'
-        }
+            const imc = (peso / (altura * altura)).toFixed(2);
 
-        resultado.innerHTML = `Seu IMC é de : ${imc}<br>${classification}`
+            let classification = ''
+
+            if (imc < 18.5) {
+                classification = 'Abaixo do peso'
+            } else if (imc < 25) {
+                classification = 'Peso normal'
+            } else if (imc < 30) {
+                classification = 'Acima do peso'
+            } else if (imc < 35) {
+                classification = 'Obesidade grau I'
+            } else if (imc < 41) {
+                classification = 'Obesidade grau II'
+            } else {
+                classification = 'Obesidade grau III'
+            }
+
+            resultado.innerHTML = `Seu IMC é de : ${imc}<br>${classification}`
+        }
+        
     } else {
         resultado.innerHTML = 'Campos vazios :('
     }
