@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo IMC</title>
+
+    <link href="./style.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="main-content">
+
+            <div>
+                <h1>Cálculo de IMC</h1>
+            </div>
+
+            <div class="main-cotent-input">
+
+                <div class="main-content-input-block">
+                    <div>
+                        <p>Peso (kg)</p>
+                    </div>
+                    <div class="main-content-input-block-input">
+                        <input type="text" id="peso" placeholder="Ex: 72.5" />
+                    </div>
+                </div>
+
+                <div class="main-content-input-block">
+                    <div>
+                        <p>Altura (m)</p>
+                    </div>
+                    <div class="main-content-input-block-input">
+                        <input type="text" id="altura" placeholder="Ex: 1.8" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="button">
+                <button id="btn" type="submit" onclick="calculaIMC()">Calcular IMC ⇢</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="modal-resultado" class="modal-container">
+        <div class="modal-content">
+            <button class="close" id="btn-close" onclick="closeModal()"><img src="./assets/close.svg"></button>
+            <span id="resultado"></span>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
